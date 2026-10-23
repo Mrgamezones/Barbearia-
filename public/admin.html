@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Painel — Barbearia do Lucas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" id="login">
+      <h1>Painel da barbearia</h1>
+      <form id="login-form" class="inline-form">
+        <label>Senha
+          <input name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+      </form>
+      <p class="error" id="login-error" role="alert" hidden></p>
+    </section>
+
+    <section class="card" id="panel" hidden>
+      <h1>Agenda</h1>
+      <div class="admin-bar">
+        <label>De <input type="date" id="from"></label>
+        <label>Até <input type="date" id="to"></label>
+        <button class="btn btn-ghost" type="button" id="today">Hoje</button>
+        <button class="btn btn-ghost" type="button" id="week">Próx. 7 dias</button>
+        <button class="btn btn-link" type="button" id="logout">Sair</button>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Data</th><th>Hora</th><th>Barbeiro</th><th>Serviço</th><th>Cliente</th><th>Telefone</th><th>Código</th><th></th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="muted" id="empty" hidden>Nenhum agendamento nesse período.</p>
+    </section>
+  </main>
+  <script src="admin.js" type="module"></script>
+</body>
+</html>

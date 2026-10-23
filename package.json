@@ -1,0 +1,15 @@
+{
+  "name": "barbearia-do-lucas",
+  "version": "1.0.0",
+  "description": "Site de agendamento online da Barbearia do Lucas",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test \"test/**/*.test.js\""
+  }
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbearia do Lucas — Agende seu horário</title>
+  <meta name="description" content="Agende seu corte ou barba online na Barbearia do Lucas. Escolha o serviço, o barbeiro e o horário livre.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Desde sempre na régua</p>
+      <h1 data-shop-name>Barbearia do Lucas</h1>
+      <p class="lead">Escolha o serviço, o barbeiro e o horário. A confirmação sai na hora.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#agendar">Agendar horário</a>
+        <a class="btn btn-ghost" href="#minha-reserva">Minha reserva</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="agendar" class="card" aria-labelledby="agendar-titulo">
+      <h2 id="agendar-titulo">Agende seu horário</h2>
+      <ol class="steps" aria-label="Etapas">
+        <li data-step-indicator="1" class="active">Serviço</li>
+        <li data-step-indicator="2">Barbeiro</li>
+        <li data-step-indicator="3">Data e hora</li>
+        <li data-step-indicator="4">Seus dados</li>
+      </ol>
+
+      <div class="step" data-step="1">
+        <h3>1. Qual serviço?</h3>
+        <div class="options" id="services" role="radiogroup" aria-label="Serviços"></div>
+      </div>
+
+      <div class="step" data-step="2" hidden>
+        <h3>2. Com quem?</h3>
+        <div class="options" id="barbers" role="radiogroup" aria-label="Barbeiros"></div>
+        <button class="btn btn-link back" type="button" data-back="1">← Voltar</button>
+      </div>
+
+      <div class="step" data-step="3" hidden>
+        <h3>3. Quando?</h3>
+        <div class="days" id="days" role="radiogroup" aria-label="Dias"></div>
+        <div id="slots-area">
+          <p class="hint" id="slots-hint">Escolha um dia para ver os horários livres.</p>
+          <div class="slots" id="slots" role="radiogroup" aria-label="Horários livres"></div>
+        </div>
+        <button class="btn btn-link back" type="button" data-back="2">← Voltar</button>
+      </div>
+
+      <div class="step" data-step="4" hidden>
+        <h3>4. Seus dados</h3>
+        <div class="summary" id="summary"></div>
+        <form id="booking-form" novalidate>
+          <label>Nome
+            <input name="name" autocomplete="name" required minlength="2" maxlength="80">
+          </label>
+          <label>WhatsApp / telefone com DDD
+            <input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required>
+          </label>
+          <label>E-mail <span class="muted">(opcional)</span>
+            <input name="email" type="email" autocomplete="email" maxlength="120">
+          </label>
+          <p class="error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Confirmar agendamento</button>
+        </form>
+        <button class="btn btn-link back" type="button" data-back="3">← Voltar</button>
+      </div>
+
+      <div class="step confirmation" data-step="5" hidden>
+        <div class="check" aria-hidden="true">✓</div>
+        <h3>Horário confirmado!</h3>
+        <div id="confirmation"></div>
+        <button class="btn btn-ghost" type="button" id="new-booking">Fazer outro agendamento</button>
+      </div>
+    </section>
+
+    <section id="minha-reserva" class="card" aria-labelledby="reserva-titulo">
+      <h2 id="reserva-titulo">Minha reserva</h2>
+      <p class="muted">Consulte ou cancele com o código recebido na confirmação.</p>
+      <form id="lookup-form" class="inline-form">
+        <label>Código
+          <input name="code" maxlength="6" autocapitalize="characters" required placeholder="ABC123">
+        </label>
+        <button class="btn btn-primary" type="submit">Consultar</button>
+      </form>
+      <p class="error" id="lookup-error" role="alert" hidden></p>
+      <div id="lookup-result"></div>
+    </section>
+
+    <section class="card info" aria-labelledby="info-titulo">
+      <h2 id="info-titulo">Onde e quando</h2>
+      <p data-shop-address></p>
+      <ul class="hours" id="hours"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>© <span data-shop-name>Barbearia do Lucas</span></p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
