@@ -25,15 +25,18 @@ export const shop = {
   },
 };
 
+// `icon`: scissors, beard, combo, child, razor ou drop.
 export const services = [
-  { id: 'corte', name: 'Corte', description: 'Corte na máquina e tesoura, com lavagem.', durationMinutes: 30, price: 45 },
-  { id: 'barba', name: 'Barba', description: 'Barba com toalha quente e navalha.', durationMinutes: 30, price: 35 },
-  { id: 'corte-barba', name: 'Corte + Barba', description: 'O combo completo.', durationMinutes: 60, price: 70 },
-  { id: 'infantil', name: 'Corte infantil', description: 'Para crianças até 12 anos.', durationMinutes: 30, price: 35 },
-  { id: 'sobrancelha', name: 'Sobrancelha', description: 'Acabamento na navalha.', durationMinutes: 15, price: 20 },
-  { id: 'platinado', name: 'Platinado / Luzes', description: 'Descoloração e tonalização.', durationMinutes: 120, price: 150 },
+  { id: 'corte', icon: 'scissors', name: 'Corte', description: 'Corte na máquina e tesoura, com lavagem.', durationMinutes: 30, price: 45 },
+  { id: 'barba', icon: 'beard', name: 'Barba', description: 'Barba com toalha quente e navalha.', durationMinutes: 30, price: 35 },
+  { id: 'corte-barba', icon: 'combo', name: 'Corte + Barba', description: 'O combo completo.', durationMinutes: 60, price: 70 },
+  { id: 'infantil', icon: 'child', name: 'Corte infantil', description: 'Para crianças até 12 anos.', durationMinutes: 30, price: 35 },
+  { id: 'sobrancelha', icon: 'razor', name: 'Sobrancelha', description: 'Acabamento na navalha.', durationMinutes: 15, price: 20 },
+  { id: 'platinado', icon: 'drop', name: 'Platinado / Luzes', description: 'Descoloração e tonalização.', durationMinutes: 120, price: 150 },
 ];
 
+// `photo` (opcional): caminho de uma foto em public/, ex.: 'img/lucas.jpg'.
+// Sem foto, o site mostra as iniciais do barbeiro.
 export const barbers = [
   { id: 'lucas', name: 'Lucas', bio: 'Dono da casa. Especialista em degradê.', workdays: [2, 3, 4, 5, 6] },
   { id: 'rafael', name: 'Rafael', bio: 'Barba e navalha são com ele.', workdays: [2, 3, 4, 5, 6] },

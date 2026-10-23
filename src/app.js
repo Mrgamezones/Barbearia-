@@ -11,6 +11,9 @@ const MIME = {
   '.js': 'text/javascript; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
 };
 
@@ -89,7 +92,7 @@ export function createApp({ bookings, shop, services, barbers, publicDir, adminP
       return sendJson(res, 200, {
         shop: { name: shop.name, address: shop.address, whatsapp: shop.whatsapp, hours: shop.hours },
         services,
-        barbers: barbers.map(({ id, name, bio, workdays }) => ({ id, name, bio, workdays })),
+        barbers: barbers.map(({ id, name, bio, workdays, photo }) => ({ id, name, bio, workdays, photo })),
         anyBarberId: ANY_BARBER,
         today,
         lastDay: addDays(today, shop.maxDaysAhead),

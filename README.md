@@ -36,6 +36,10 @@ npm test
 
 Tudo fica em [`src/config.js`](src/config.js): nome, endereço, horário de funcionamento por dia da semana (com intervalo de almoço), intervalo entre horários, antecedência mínima, quantos dias à frente dá para agendar, serviços (nome, preço, duração) e barbeiros (nome, descrição, dias em que trabalham).
 
+### Visual
+
+O layout segue uma identidade escura com detalhes dourados (fonte Poppins). As cores ficam como variáveis no topo de [`public/styles.css`](public/styles.css) (`--gold`, `--bg`, `--surface`...), então trocar a paleta é editar poucas linhas. Para usar fotos reais dos barbeiros, coloque as imagens em `public/img/` e preencha o campo `photo` de cada barbeiro em `src/config.js`; sem foto, aparecem as iniciais.
+
 ## Confirmação automática
 
 Toda reserva já nasce **confirmada** — o horário só aparece se estiver livre, e a gravação é feita de forma atômica, então dois clientes não conseguem pegar o mesmo horário. O cliente vê a confirmação na tela na hora.
